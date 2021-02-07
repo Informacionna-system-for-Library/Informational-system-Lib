@@ -1,0 +1,42 @@
+﻿@model Informational_system_Lib.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Zaglavie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Zaglavie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Avtor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Avtor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Janr)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Janr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kolichestvo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kolichestvo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdBook">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
