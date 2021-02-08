@@ -27,7 +27,7 @@ namespace Informational_system_Lib.Controllers
         {
             return View();
         }
-
+      
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

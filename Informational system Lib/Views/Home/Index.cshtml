@@ -5,18 +5,19 @@
 <div class="text-center">
     <h1 class="display-4">ВХОД</h1>
     @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
-<form action="action_page.php" method="post">
+<p class="text-center" id="message"></p>
+<form class="custom-form" action="#" method="post">
     <div class="container">
         <label for="uname"><b>Потребител</b></label>
-        <input type="text" placeholder="Въведи Потребител" name="uname" required>             
+        <input type="text" placeholder="Въведи Потребител" id="name" name="uname" required>             
     </div>
     <div class="container">
 
         <label for="psw"><b>Парола</b></label>
-        <input type="password" placeholder="Въведи Парола" name="psw" required>
+        <input type="password" placeholder="Въведи Парола" id="password" name="psw" required>
     </div>
     <div class="container">
-        <button type="submit">Вход</button>
+        <button type="submit" id="submit">Вход</button>
         <label>
             @*<input type="checkbox" checked="checked" name="remember"> Remember me*@
         </label>
