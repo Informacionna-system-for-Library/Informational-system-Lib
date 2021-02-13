@@ -14,5 +14,6 @@ namespace Informational_system_Lib.Models
         public string Avtor { get; set; }
         public string Janr { get; set; }
         public int Kolichestvo { get; set; }
+        
     }
 }

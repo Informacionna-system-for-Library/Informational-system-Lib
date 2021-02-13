@@ -29,6 +29,11 @@ namespace Informational_system_Lib
              options.UseSqlServer(
                  Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
+
+            services.AddDbContext<CustomerContext>(options =>
+             options.UseSqlServer(
+                 Configuration.GetConnectionString("CustomerConnection")));
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
