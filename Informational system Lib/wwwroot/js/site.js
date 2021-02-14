@@ -14,7 +14,7 @@ $(document).ready(function () {
         let password = $("#password").val();
 
         if (name === "lib-project" && password === "pgs030304") {
-            window.location.href = "/Books";
+            window.location.href = "/Home/HomePage2";
         } else {
             $("#message").text('Невалидни данни за вход!');
         }
