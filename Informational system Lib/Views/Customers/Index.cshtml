@@ -9,6 +9,14 @@
 <p>
     <a asp-action="Create">Добави нов</a>
 </p>
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Enter first and second name of the customer..." value="@ViewData["Getcustomersdetails"]" name="CustomerSearch" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get All Customers</a>
+    </p>
+
+</form>
 <table class="table">
     <thead>
         <tr>

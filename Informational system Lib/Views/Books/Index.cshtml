@@ -7,8 +7,16 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Добави нов</a>
 </p>
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Enter book name or author..." value="@ViewData["Getbooksdetails"]" name="BooksSearch" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get All Books</a>
+    </p>
+
+</form>
 <table class="table">
     <thead>
         <tr>

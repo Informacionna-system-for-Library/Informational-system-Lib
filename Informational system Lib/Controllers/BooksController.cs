@@ -41,6 +41,19 @@ namespace Informational_system_Lib.Controllers
 
             return View(book);
         }
+        [HttpGet]
+
+        public async Task<IActionResult> Index(string BooksSearch)
+        {
+            ViewData["Getbooksdetails"] = BooksSearch;
+            var booksquery = from x in _context.Books select x;
+            if (!String.IsNullOrEmpty(BooksSearch))
+            {
+                booksquery = booksquery.Where(x => x.Zaglavie.Contains(BooksSearch) || x.Avtor.Contains(BooksSearch));
+
+            }
+            return View(await booksquery.AsNoTracking().ToListAsync());
+        }
 
         // GET: Books/Create
         public IActionResult Create()

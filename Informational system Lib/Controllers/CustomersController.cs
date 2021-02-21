@@ -41,6 +41,18 @@ namespace Informational_system_Lib.Controllers
 
             return View(customer);
         }
+        [HttpGet]
+        public async Task<IActionResult> Index(string CustomerSearch)
+        {
+            ViewData["Getcustomersdetails"] = CustomerSearch;
+            var customerquary = from x in _context.Customer select x;
+            if (!String.IsNullOrEmpty(CustomerSearch))
+            {
+                customerquary = customerquary.Where(x => x.FirstName.Contains(CustomerSearch) && x.ThirdName.Contains(CustomerSearch));
+
+            }
+            return View(await customerquary.AsNoTracking().ToListAsync());
+        }
 
         // GET: Customers/Create
         public IActionResult Create()
