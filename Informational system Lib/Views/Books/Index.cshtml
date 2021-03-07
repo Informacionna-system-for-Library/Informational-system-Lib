@@ -4,16 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Книги</h1>
 
 <p>
     <a asp-action="Create">Добави нов</a>
 </p>
 <form method="get" asp-action="Index">
     <p>
-        <input type="search" placeholder="Enter book name or author..." value="@ViewData["Getbooksdetails"]" name="BooksSearch" style="width:500px;" />
-        <input type="submit" value="Search" class="btn btn-primary" />
-        <a asp-action="Index">Get All Books</a>
+        <input type="search" placeholder="Въведи име на книга или автор..." value="@ViewData["Getbooksdetails"]" name="BooksSearch" style="width:500px;" />
+        <input type="submit" value="Търсене" class="btn btn-primary" />
+        <a asp-action="Index">Показване на всички</a>
     </p>
 
 </form>
@@ -21,16 +21,17 @@
     <thead style="border-color:black">
         <tr style="border-color:black">
             <th>
-                @Html.DisplayNameFor(model => model.Zaglavie)
+                Заглавие
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Avtor)
+                Автор
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Janr)
+                Жанр
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Kolichestvo)
+                @*@Html.DisplayNameFor(model => model.Kolichestvo)*@
+                Количество
             </th>
             <th></th>
         </tr>
@@ -51,9 +52,9 @@
                 @Html.DisplayFor(modelItem => item.Kolichestvo)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdBook">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdBook">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdBook">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdBook">Редактиране</a> |
+                <a asp-action="Details" asp-route-id="@item.IdBook">Детайли</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdBook">Изтриване</a>
             </td>
         </tr>
 }

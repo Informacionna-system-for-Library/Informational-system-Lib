@@ -4,16 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Клиенти</h1>
 
 <p>
     <a asp-action="Create">Добави нов</a>
 </p>
 <form method="get" asp-action="Index">
     <p>
-        <input type="search" placeholder="Enter first and second name of the customer..." value="@ViewData["Getcustomersdetails"]" name="CustomerSearch" style="width:500px;" />
-        <input type="submit" value="Search" class="btn btn-primary" />
-        <a asp-action="Index">Get All Customers</a>
+        <input type="search" placeholder="Въведете първо и второ име на клиента..." value="@ViewData["Getcustomersdetails"]" name="CustomerSearch" style="width:500px;" />
+        <input type="submit" value="Търсене" class="btn btn-primary" />
+        <a asp-action="Index">Върни всички клиенти</a>
     </p>
 
 </form>
@@ -21,31 +21,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+               Първо име
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SecondName)
+                Бащино име
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ThirdName)
+                Фамилия
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Addres)
+                Адрес
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                Телефонен номер
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EGN)
+                ЕГН
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NameOfBook)
+                Име на взета книга
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfRecord)
+                Дата на запис
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfDeregistration)
+                Дата на отписване
             </th>
             <th></th>
         </tr>
@@ -81,9 +81,9 @@
                 @Html.DisplayFor(modelItem => item.DateOfDeregistration)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.id">Редактиране</a> 
+                <a asp-action="Details" asp-route-id="@item.id">Детайли</a> 
+                <a asp-action="Delete" asp-route-id="@item.id">Изтриване</a>
             </td>
         </tr>
 }

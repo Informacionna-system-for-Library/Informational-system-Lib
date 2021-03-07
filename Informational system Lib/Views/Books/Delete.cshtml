@@ -4,33 +4,33 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Изтриване</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Наистина ли искате да изтриете това?</h3>
 <div>
-    <h4>Book</h4>
+    @*<h4>Book</h4>*@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Zaglavie)
+           Заглавие
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Zaglavie)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Avtor)
+            Автор
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Avtor)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Janr)
+            Жанр
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Janr)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Kolichestvo)
+            Количество
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Kolichestvo)
@@ -39,7 +39,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdBook" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
     </form>
 </div>
