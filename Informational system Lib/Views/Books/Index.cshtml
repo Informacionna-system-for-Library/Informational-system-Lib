@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+<a href="/Home/HomePage2">Към главното меню</a>
+
 <h1>Книги</h1>
 
 <p>
@@ -37,26 +39,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zaglavie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Avtor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Janr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kolichestvo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdBook">Редактиране</a> |
-                <a asp-action="Details" asp-route-id="@item.IdBook">Детайли</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdBook">Изтриване</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zaglavie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Avtor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Janr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kolichestvo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdBook">Редактиране</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdBook">Детайли</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdBook">Изтриване</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
