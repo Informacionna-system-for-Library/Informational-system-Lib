@@ -1,4 +1,4 @@
-using Informational_system_Lib.Models;
+﻿using Informational_system_Lib.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,8 +23,9 @@ namespace Informational_system_Lib
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // тука използваме връзките към базите данни  и контекст класовете за да можем да направим миграции и да направим базите данни.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {  
             services.AddDbContext<BookContext>(options =>
              options.UseSqlServer(
                  Configuration.GetConnectionString("DefaultConnection")));

@@ -3,9 +3,11 @@
 
 // Write your JavaScript code.
 
+// Code that uses other library's $ can follow here.
 $ = jQuery.noConflict();
 
-
+// в Index.cshtml  декларираме  ид на класовете за да можем да ги използваме в този файл.
+//В този файл се извършва проверка дали името и паролата които са въведени в кутиите за логин са правилните данни.
 $(document).ready(function () {
 
     $('#submit').on('click', function (e) {

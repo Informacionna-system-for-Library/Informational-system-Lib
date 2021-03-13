@@ -8,7 +8,8 @@ namespace Informational_system_Lib.Models
 {
     public class Customer
     {
-        [Key]
+        [Key] // обявява се че id ще бъде първичен ключ за базата данни.
+        // декларират се променливи които ще бъдат полетата на нашата база данни.
         public int id { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
