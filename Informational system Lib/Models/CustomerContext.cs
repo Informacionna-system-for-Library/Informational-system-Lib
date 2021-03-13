@@ -13,5 +13,8 @@ namespace Informational_system_Lib.Models
 
         }
         public DbSet<Customer> Customer { get; set; } //създава се DbContext Configuration  и иметао на тази променлива ще бъде името на  нашета таблица.
+     // след като връзките във appsettings.json са направени и използвани в Startup.cs можем да направим миграциите и да актоализираме базите данни.
+     //чрез Package Manager Console  ще направим миграцията и актуализирането на базата данни задавайки използването на CustomerContext    като контекст клас.
+    //след което  Microsoft.EntityFrameworkCore.Tools   ще генерира код за контолерите и изгледите използвайки моделния клас и контекст класът.
     }
 }
