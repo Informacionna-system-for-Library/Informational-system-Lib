@@ -18,13 +18,13 @@ namespace Informational_system_Lib.Controllers
             _context = context;
         }
 
-        // GET: Customers
+        // Връща изглед към главната страница на клиентите.
         public async Task<IActionResult> Index()
         {
             return View(await _context.Customer.ToListAsync());
         }
 
-        // GET: Customers/Details/5
+        // връща изглед към детайлите на избран клиент.(Или ако не съществува книгата връща  ненамерена страница)
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,15 +54,13 @@ namespace Informational_system_Lib.Controllers
             return View(await customerquary.AsNoTracking().ToListAsync());
         }
 
-        // GET: Customers/Create
+        // Връща изглед към страницата за вписване на клиенти
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Customers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Въвеждане на клинти в базата данни.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,FirstName,SecondName,ThirdName,Addres,PhoneNumber,EGN,NameOfBook,DateOfRecord,DateOfDeregistration")] Customer customer)
@@ -76,7 +74,7 @@ namespace Informational_system_Lib.Controllers
             return View(customer);
         }
 
-        // GET: Customers/Edit/5
+        // връща изглед за редактиране на клиент.
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -92,9 +90,7 @@ namespace Informational_system_Lib.Controllers
             return View(customer);
         }
 
-        // POST: Customers/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Редактиране на клиент и връщане в базата данни.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,FirstName,SecondName,ThirdName,Addres,PhoneNumber,EGN,NameOfBook,DateOfRecord,DateOfDeregistration")] Customer customer)
@@ -127,7 +123,7 @@ namespace Informational_system_Lib.Controllers
             return View(customer);
         }
 
-        // GET: Customers/Delete/5
+        // връщане изглед за изтриване на клиент.
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -145,7 +141,7 @@ namespace Informational_system_Lib.Controllers
             return View(customer);
         }
 
-        // POST: Customers/Delete/5
+        // Изтриване на клиент от базата данни.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

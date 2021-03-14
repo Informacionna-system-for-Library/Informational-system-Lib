@@ -18,13 +18,13 @@ namespace Informational_system_Lib.Controllers
             _context = context;
         }
 
-        // GET: Books
+        // Връща изглед към главната страница на книгите
         public async Task<IActionResult> Index()
         {
             return View(await _context.Books.ToListAsync());
         }
 
-        // GET: Books/Details/5
+        // връща изглед към детайлите на избрана книга.(Или ако не съществува книгата връща  ненамерена страница)
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -55,15 +55,14 @@ namespace Informational_system_Lib.Controllers
             return View(await booksquery.AsNoTracking().ToListAsync());
         }
 
-        // GET: Books/Create
+        // Връща изглед към страницата за създаване на книги
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Books/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
+        // Въвеждане на книга в базата данни.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdBook,Zaglavie,Avtor,Janr,Kolichestvo")] Book book)
@@ -77,7 +76,7 @@ namespace Informational_system_Lib.Controllers
             return View(book);
         }
 
-        // GET: Books/Edit/5
+        // връща изглед за редактиране на книга.
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -93,9 +92,8 @@ namespace Informational_system_Lib.Controllers
             return View(book);
         }
 
-        // POST: Books/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
+        // Редактиране на книга и връщане в базата данни.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdBook,Zaglavie,Avtor,Janr,Kolichestvo")] Book book)
@@ -128,7 +126,7 @@ namespace Informational_system_Lib.Controllers
             return View(book);
         }
 
-        // GET: Books/Delete/5
+        // връщане изглед за изтриване на книга.
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,7 +144,7 @@ namespace Informational_system_Lib.Controllers
             return View(book);
         }
 
-        // POST: Books/Delete/5
+        // Изтриване на книга от базата данни.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
