@@ -17,8 +17,8 @@ namespace Informational_system_Lib.Migrations.Customer
                     SecondName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ThirdName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Addres = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<int>(type: "int", nullable: false),
-                    EGN = table.Column<int>(type: "int", nullable: false),
+                    PhoneNumber = table.Column<int>(type: "nvarchar(max)", nullable: false),
+                    EGN = table.Column<int>(type: "nvarchar(max)", nullable: false),
                     NameOfBook = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateOfRecord = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateOfDeregistration = table.Column<DateTime>(type: "datetime2", nullable: false)

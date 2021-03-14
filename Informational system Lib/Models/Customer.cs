@@ -15,8 +15,8 @@ namespace Informational_system_Lib.Models
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string Addres { get; set; }
-        public int PhoneNumber { get; set; }
-        public int EGN { get; set; }
+        public string PhoneNumber { get; set; }
+        public string EGN { get; set; }
         public string NameOfBook { get; set; }
         public DateTime DateOfRecord { get; set; }
         public DateTime DateOfDeregistration { get; set; }

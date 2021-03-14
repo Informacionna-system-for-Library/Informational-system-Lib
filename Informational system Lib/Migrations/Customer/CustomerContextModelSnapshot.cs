@@ -36,7 +36,7 @@ namespace Informational_system_Lib.Migrations.Customer
                         .HasColumnType("datetime2");
 
                     b.Property<int>("EGN")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
@@ -45,7 +45,7 @@ namespace Informational_system_Lib.Migrations.Customer
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecondName")
                         .HasColumnType("nvarchar(max)");
