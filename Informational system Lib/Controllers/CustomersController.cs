@@ -48,7 +48,7 @@ namespace Informational_system_Lib.Controllers
             var customerquary = from x in _context.Customer select x;
             if (!String.IsNullOrEmpty(CustomerSearch))
             {
-                customerquary = customerquary.Where(x => x.FirstName.Contains(CustomerSearch) && x.ThirdName.Contains(CustomerSearch));
+                customerquary = customerquary.Where(x => x.EGN.Contains(CustomerSearch));
 
             }
             return View(await customerquary.AsNoTracking().ToListAsync());
