@@ -49,8 +49,7 @@ namespace Informational_system_Lib.Controllers
             var booksquery = from x in _context.Books select x;
             if (!String.IsNullOrEmpty(BooksSearch))
             {
-                booksquery = booksquery.Where(x => x.Zaglavie.Contains(BooksSearch) || x.Avtor.Contains(BooksSearch));
-
+                booksquery = booksquery.Where(x => x.Zaglavie.Contains(BooksSearch)  || x.Avtor.Contains(BooksSearch) || x.Janr.Contains(BooksSearch));
             }
             return View(await booksquery.AsNoTracking().ToListAsync());
         }
