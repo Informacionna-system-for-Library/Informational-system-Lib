@@ -15,7 +15,7 @@ $(document).ready(function () {
         let name = $("#name").val();
         let password = $("#password").val();
 
-        if (name === "" && password === "") {
+        if (name === "Admin" && password === "admin") {
             window.location.href = "/Home/HomePage2";
         } else {
             $("#message").text('Невалидни данни за вход!');
